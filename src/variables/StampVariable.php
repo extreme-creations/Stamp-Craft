@@ -25,7 +25,7 @@ class StampVariable
      */
     public function er(string $fileName, string $mode = 'file', string $alg = 'ts'): string
     {
-        $publicRoot = !empty(Stamp::getInstance()->getSettings()->publicRoot) ?: '@webroot';
+        $publicRoot = Stamp::getInstance()->getSettings()->publicRoot ?: '@webroot';
         $documentRoot = \Yii::getAlias($publicRoot);
         $filePath = $this->_removeDoubleSlashes($documentRoot . '/' . $fileName);
 
